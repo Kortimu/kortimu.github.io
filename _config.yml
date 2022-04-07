@@ -1,1 +1,27 @@
-theme: jekyll-theme-cayman
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "Korti[DEV]" # the name of your site, e.g. ACME Corp.
+
+# permalink: /news/:year/:month/:day/:title
+
+defaults:
+  # News
+  - scope:
+      path: "_posts/news"
+      type: posts
+    values:
+      permalink: news/:year/:month/:day/:title
+      category: "news"
+  # Blog posts
+  - scope:
+      path: "_posts/blog"
+      type: posts
+    values:
+      permalink: blog/:title
+      category: "blog"
+  - scope:
+      path: "_drafts"
+      type: posts
+    values:
+      permalink: draft/:title
+      category: "blog"

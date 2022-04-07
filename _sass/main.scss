@@ -1,0 +1,253 @@
+$bodyFont: "Ubuntu", sans-serif;
+
+$green: #33984b;
+$greenLight: #5ac54f;
+$darker: #04152b;
+$dark: #0c2e44;
+$gray: #617893;
+$white: #d1f8ff;
+$purple: #963dbf;
+
+body {
+  background: black;
+  font-family: $bodyFont;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+}
+
+::selection {
+  background-color: $purple;
+  color: $white;
+}
+
+header {
+  position: relative;
+  background: $darker;
+  max-width: 65rem;
+  margin: auto;
+  nav {
+    display: flex;
+    align-items: center;
+
+    #logo {
+      display: flex;
+      background-color: $darker;
+      margin: 0;
+      padding: 0 1rem;
+      // width: 250px;
+      // -webkit-clip-path: polygon(0 0, 100% 0%, 230px 100%, 0% 100%);
+      // clip-path: polygon(0 0, 100% 0%, 230px 100%, 0% 100%);
+    }
+
+    #hamburger {
+      display: none;
+    }
+    label {
+      display: none;
+    }
+  }
+  .menu-links {
+    position: absolute;
+    right: 0;
+    top: 10px;
+
+    :hover, :focus {
+      transform: scale(1.15);
+      -webkit-transition: all .125s linear;
+      -moz-transition: all .125s linear;
+      transition: all .125s linear;
+    }
+    
+    #final {
+      -webkit-clip-path: polygon(25% 0, 100% 0%, 75% 100%, 0 100%);
+      clip-path: polygon(25% 0, 85% 0%, 85% 100%, 0 100%);
+    }
+
+    a {
+      padding: .75rem 32px;
+      text-align: center;
+      background-color: $dark;
+      width: clamp(5rem, 11.5vw, 8rem);
+      -webkit-clip-path: polygon(25% 0, 100% 0%, 75% 100%, 0 100%);
+      clip-path: polygon(25% 0, 100% 0%, 75% 100%, 0 100%);
+      display: inline-block;
+      margin-left: -30px;
+      font-size: 1.25rem;
+      -webkit-transition: all .125s linear;
+      -moz-transition: all .125s linear;
+      transition: all .125s linear;
+    }
+  }
+}
+
+footer {
+  padding: 5vh 0;
+  text-align: center;
+  background: $darker;
+  max-width: 65rem;
+  margin: 0 auto;
+  color: $white;
+  
+  h1 {
+    margin-top: 0;
+    font-size: 2.5rem;
+  }
+
+  a {
+    padding: .5rem;
+    border: 2px solid $white;
+    margin: 0 .5rem;
+    font-size: 1.5rem;
+  }
+  a:hover, a:focus {
+    background: $white;
+    color: $darker;
+  }
+}
+
+.blog {
+  background-color: $dark;
+  color: $white;
+  padding: 1rem;
+  min-height: 400px;
+  margin: 0 auto;
+  max-width: 63rem;
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2rem;
+    // margin: 1rem 2rem;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h2, h3, p {
+    margin: 1rem 2rem;
+    margin-top: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    text-align: center;
+    .blog-container {
+      display: inline-block;
+      width: 18.75rem;
+      margin: .5rem;
+      align-items: center;
+      justify-content: center;
+
+      .title-excerpt {
+        background: $darker;
+        padding: .5rem 1rem;
+        img {
+          width: 100%;
+          aspect-ratio: 16/9;
+          margin-bottom: 1rem;
+        }
+        h2 {
+          font-size: 1.75rem;
+          text-align: center;
+          margin: 1rem 0;
+          min-height: 5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        p {
+          font-size: 1.25rem;
+          margin: 0;
+        }
+      }
+
+      .date-categories {
+        padding: .5rem 1rem;
+        background: $darker;
+
+        p {
+          margin-top: 1rem;
+        }
+
+        .categories {
+          .category {
+            font-size: 1.25rem;
+            text-transform: capitalize;
+            display: inline-block;
+            margin: .25em;
+            background-color: $dark;
+            color: $white;
+            padding: .5em;
+          }
+          // margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  // Make hamburger, stop being lazy
+  header {
+    nav {
+      label {
+        font-size: 2.5rem;
+        color: $white;
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        top: 5px;
+      }
+
+      .menu-links {
+        display: none;
+      }
+
+      #hamnav input:checked ~ .menu-links {
+        display: block;
+        left: 0;
+        top: calc(3rem + 20px);
+
+        a {
+          display: block;
+          margin: 0 auto;
+          width: 75vw;
+          height: 20px;
+          clip-path: none;
+        }
+      }
+    }
+  }
+
+  .category {
+    color: red;
+  }
+
+  .blog {
+    .container {
+      .blog-container {
+        width: 80vw;
+        .title-excerpt {
+          h2 {
+            font-size: 2rem;
+          }
+          p {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

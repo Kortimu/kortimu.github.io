@@ -1,3 +1,5 @@
-# Kortimu's First Website
+# Kortimu's personal website
 
-Just a site to learn web development, and to display my projects.
+A simple website used to learn web development and do some fun web related projects.
+
+Yup, it's that simple.

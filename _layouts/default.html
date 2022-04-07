@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/favicon.ico">
+    <title>{{page.title}} | {{site.title}}</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a id="logo" href="/">
+          <img src="/images/kortimu.png" width="64" height="64">
+          <h1>
+            Korti[DEV]
+          </h1>
+        </a>
+        <div id="hamnav">
+          <label for="hamburger">&#9776;</label>
+          <input type="checkbox" id="hamburger"/>
+          
+          <div class="menu-links">
+            <a href="/" id="home">Home</a>
+            <a href="/news">News</a>
+            <a href="/blog">Blog</a>
+            <a href="/about" id="final">About</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+      {{content}}
+
+    <footer>
+      <h1>Social</h1>
+      <a href="https://www.github.com/Kortimu" target="_blank">Github</a>
+      <a href="https://www.twitter.com/kortimu" target="_blank">Twitter</a>
+    </footer>
+  </body>
+</html>
