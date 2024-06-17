@@ -4,11 +4,13 @@ title: Home
 ---
 
 <section class="blog">
-  <h1>Kortimu</h1>
-  <h2>The guy with too much dedication for his own good.</h2>
+  <!-- <h1>Kortimu</h1>
+  <h2>The guy with too much dedication for his own good.</h2> -->
+  <img id="warning" src="/assets/images/warning.gif">
   <h3>Latest Posts</h3>
   <div class="container">
-    {% for post in site.posts %}
+    {% assign blog_posts = site.posts | where:"category","blog" %}
+    {% for post in blog_posts %}
         {% if forloop.index < 4 %}
           <a class="blog-container" id="post" href="{{ post.url }}">
             <div class="title-excerpt">
@@ -17,7 +19,7 @@ title: Home
               {% if post.cover %}
                 {{ post.cover }}
               {% else %}
-                /images/kortimup.png
+                /assets/images/kortimu-logo.png
               {% endif %}" alt="Your browser doesn't support the image. What kind of browser are you using?">
             </div>
             <div class="date-categories">
@@ -38,6 +40,23 @@ title: Home
   </div>
   <h3>Projects</h3>
   <div class="container">
-    <p>only relevant for now is <strong><a href="https://www.github.com/Kortimu/DylanBot">DylanBot</a></strong> (soon to be called "Dymuse")</p>
+    {% for project in site.data.projects %}
+      {% if forloop.index < 4 %}
+        <div class="project">
+          <div class="project-card" href="{{ project.url }}">
+            <div class="card-reveal">
+              <p>{{ project.description }}</p>
+              <div class="project-buttons">
+                {% for button in project.buttons %}
+                  <a href="{{ button.url }}">{{ button.name }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <img src="{{ project.image }}" alt="">
+          </div>
+          <p><strong>{{ project.title }}</strong></p>
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>

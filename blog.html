@@ -5,7 +5,6 @@ title: Blog
 
 <section class="blog">
   <h1>Latest Blog Posts</h1>
-  <h2>oh noes nothing's here because all the planned blog posts ended up making me burn out oh noooooooooo</h2>
   <div class="container">
     {% for post in site.posts %}
       {% if post.category == "blog" %}
@@ -16,7 +15,7 @@ title: Blog
             {% if post.cover %}
               {{ post.cover }}
             {% else %}
-              /images/kortimup.png
+              assets/images/kortimu-3-2.png
             {% endif %}" alt="Your browser doesn't support the image. What kind of browser are you using?">
           </div>
           <div class="date-categories">

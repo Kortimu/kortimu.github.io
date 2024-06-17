@@ -1,0 +1,9 @@
+[{
+    "title": "Dymuse (DylanBot)",
+    "description": "Originally a Discord bot made for a friend, expanded into a quirky little fun bot. (still for said friend, still a discord bot)",
+    "image": "/assets/images/projects/dylanbot.png",
+    "buttons": [{
+        "name": "Source code",
+        "url": "https://github.com/Kortimu/Dymuse"
+    }]
+}]

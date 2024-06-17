@@ -1,11 +1,11 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-title: "Korti[DEV]" # the name of your site, e.g. ACME Corp.
+title: "Kortimu's Domain" # the name of your site, e.g. ACME Corp.
 
 # permalink: /news/:year/:month/:day/:title
 
 defaults:
-  # News
+  # News posts
   - scope:
       path: "_posts/news"
       type: posts
@@ -19,6 +19,7 @@ defaults:
     values:
       permalink: blog/:title
       category: "blog"
+  # Drafts
   - scope:
       path: "_drafts"
       type: posts

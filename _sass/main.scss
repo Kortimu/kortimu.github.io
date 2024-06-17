@@ -1,26 +1,68 @@
 $bodyFont: "Ubuntu", sans-serif;
+$titleFont: "Poetsen One", sans-serif;
 
 $green: #33984b;
 $greenLight: #5ac54f;
 $darker: #04152b;
 $dark: #0c2e44;
-$gray: #617893;
+// $gray: #617893;
 $white: #d1f8ff;
-$purple: #963dbf;
+// $purple: #963dbf;
 
+// To any poor soul that dares try comprehend this: I am very sorry. Past me is an absolute baboon for making this shit this nested. Will fix later.
+
+// TODO: Figure out the whole webkit and moz stuff. Should I bother? How to dev and do all that fancy shit? Problem for later. More fires need to be put out.
+
+// FIXME: On my Tablet with Firefox, putting a margin on a body just crops the website. Excuse me? Why the fuck does it look fine everywhere else? Can't tell if my jank or Firefox's jank.
 body {
-  background: black;
+  margin: 0 10vw;
   font-family: $bodyFont;
+  background: $darker;
+  background-image: url(/assets/images/bg.png);
+  image-rendering: pixelated;
+  background-attachment: fixed;
+  background-size: 20rem;
+  animation: bgmove 40s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes bgmove {
+  from {
+    background-position: 40rem 0;
+  }
+  to {
+    background-position: 0 20rem;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-family: $titleFont;
+  font-weight: normal;
 }
 
 a {
   color: $white;
   text-decoration: none;
+  transition: background-color 0.1s;
 }
 
+b {
+  font-weight: 800;
+}
+
+// In Firefox, a selected link's underline does not follow color property. God is dead.
 ::selection {
-  background-color: $purple;
-  color: $white;
+  background-color: $white;
+  color: $darker;
 }
 
 header {
@@ -31,54 +73,124 @@ header {
   nav {
     display: flex;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     #logo {
       display: flex;
       background-color: $darker;
       margin: 0;
       padding: 0 1rem;
-      // width: 250px;
-      // -webkit-clip-path: polygon(0 0, 100% 0%, 230px 100%, 0% 100%);
-      // clip-path: polygon(0 0, 100% 0%, 230px 100%, 0% 100%);
     }
 
-    #hamburger {
-      display: none;
+    .hamnav-button {
+      opacity: 0;
     }
-    label {
-      display: none;
-    }
-  }
-  .menu-links {
-    position: absolute;
-    right: 0;
-    top: 10px;
 
-    :hover, :focus {
+    .hamnav-check {
+      display: none;
+    }
+
+    .menu-links {
+      display: flex;
+      position: absolute;
+      right: 0;
+      top: 10px;
+
+      a {
+        padding: .75rem 32px;
+        text-align: center;
+        background-color: $dark;
+        width: clamp(5rem, 11.5vw, 8rem);
+        -webkit-clip-path: polygon(25% 0, 100% 0%, 75% 100%, 0 100%);
+        clip-path: polygon(25% 0, 100% 0%, 75% 100%, 0 100%);
+        display: inline-block;
+        margin-left: -2rem;
+        font-size: 1.25rem;
+        -webkit-transition: all .125s linear;
+        -moz-transition: all .125s linear;
+        transition: all .125s linear;
+      }
+
+      :hover, :focus {
+        transform: scale(1.15);
+        -webkit-transition: all .125s linear;
+        -moz-transition: all .125s linear;
+        transition: all .125s linear;
+      }
+
+      #final {
+        -webkit-clip-path: polygon(25% 0, 100% 0%, 75% 100%, 0 100%);
+        clip-path: polygon(25% 0, 85% 0%, 85% 100%, 0 100%);
+        margin-right: 2.75rem;
+      }
+    }
+
+    #news-check {
+      display: none;
+    }
+
+    #news-button {
+      padding: .25rem;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: $dark;
+      clip-path: none;
+      -webkit-clip-path: none;
+      margin-top: 0.75rem;
+      margin-left: -1rem;
+      margin-right: .75rem;
+      font-size: 1.75rem;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-transition: all .125s linear;
+      -moz-transition: all .125s linear;
+      transition: all .125s linear;
+    }
+
+    #news-button:hover {
       transform: scale(1.15);
       -webkit-transition: all .125s linear;
       -moz-transition: all .125s linear;
       transition: all .125s linear;
     }
-    
-    #final {
-      -webkit-clip-path: polygon(25% 0, 100% 0%, 75% 100%, 0 100%);
-      clip-path: polygon(25% 0, 85% 0%, 85% 100%, 0 100%);
-    }
 
-    a {
-      padding: .75rem 32px;
-      text-align: center;
-      background-color: $dark;
-      width: clamp(5rem, 11.5vw, 8rem);
-      -webkit-clip-path: polygon(25% 0, 100% 0%, 75% 100%, 0 100%);
-      clip-path: polygon(25% 0, 100% 0%, 75% 100%, 0 100%);
-      display: inline-block;
-      margin-left: -30px;
-      font-size: 1.25rem;
+    #news-button:focus {
       -webkit-transition: all .125s linear;
       -moz-transition: all .125s linear;
       transition: all .125s linear;
+    }
+
+    #news-check:checked ~ #news-button {
+      background-color: $green;
+    }
+
+    #news-check:checked ~ .news-bar {
+      display: flex;
+    }
+
+    .news-bar {
+      display: none;
+      flex: 0 1 65rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      background-color: $darker;
+      padding: 0.25rem;
+
+      .news-info {
+        flex: 1 0 auto;
+        max-width: calc(100% - 1.5rem);
+        text-align: center;
+        font-size: 1.25rem;
+        background-color: $dark;
+        margin: 0.5rem;
+        padding: 0.25rem;
+      }
     }
   }
 }
@@ -115,6 +227,8 @@ footer {
   min-height: 400px;
   margin: 0 auto;
   max-width: 63rem;
+  image-rendering: auto;
+  text-align: center;
 
   h1 {
     font-size: 3rem;
@@ -131,17 +245,28 @@ footer {
     font-size: 1.5rem;
   }
 
-  h2, h3, p {
-    margin: 1rem 2rem;
+  h2, h3 {
+    margin: 0.5rem 2rem;
     margin-top: 2rem;
   }
 
   p {
-    font-size: 1.5rem;
+    margin: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  p > strong > a {
+    text-decoration: underline;
+    color: $greenLight;
+  }
+
+  #warning {
+    width: calc(100% + 2rem);
+    position: relative;
+    left: -1rem;
   }
 
   .container {
-    text-align: center;
     .blog-container {
       display: inline-block;
       width: 18.75rem;
@@ -151,17 +276,15 @@ footer {
 
       .title-excerpt {
         background: $darker;
-        padding: .5rem 1rem;
+        padding: 0 1rem;
         img {
           width: 100%;
-          aspect-ratio: 16/9;
-          margin-bottom: 1rem;
         }
         h2 {
-          font-size: 1.75rem;
+          font-size: 1.5rem;
           text-align: center;
-          margin: 1rem 0;
-          min-height: 5rem;
+          margin: 0;
+          height: 8rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -190,61 +313,115 @@ footer {
             color: $white;
             padding: .5em;
           }
-          // margin-bottom: 1.5rem;
         }
       }
     }
   }
 }
 
-@media screen and (max-width: 768px) {
-  // Make hamburger, stop being lazy
+@media screen and (max-width: 769px) {
+  body {
+    margin: 0 5vw;
+    background-image: url(/assets/images/bg-mobile.png);
+    background-size: 5vw;
+    animation: bgmove-mobile 30s infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes bgmove-mobile {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 0 256vw;
+    }
+  }
+
+  // TODO: Hamburger and news feel a bit awkward, figure out a neat solution later.
   header {
     nav {
-      label {
-        font-size: 2.5rem;
-        color: $white;
-        cursor: pointer;
-        display: inline-block;
-        position: absolute;
-        right: 20px;
-        top: 5px;
-      }
-
-      .menu-links {
+      .menu-links > a {
         display: none;
       }
 
-      #hamnav input:checked ~ .menu-links {
-        display: block;
+      .hamnav-button {
+        opacity: 1;
+        font-size: 2.5rem;
+        color: $white;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        display: inline-block;
+        position: absolute;
+        right: 4rem;
+        top: 5px;
+      }
+
+      .hamnav-check:checked ~ .menu-links {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: $darker;
         left: 0;
         top: calc(3rem + 20px);
+        padding-bottom: .5rem;
+        z-index: 1;
 
-        a {
+        .hamnav {
           display: block;
-          margin: 0 auto;
-          width: 75vw;
+          flex: 1 0 10vw;
+          margin: .5rem;
           height: 20px;
           clip-path: none;
+          left: 0;
+        }
+
+        .hamnav:hover, .hamnav:focus {
+          transform: scale(1.05);
+        }
+
+        #final {
+          clip-path: none;
+          margin-right: 0.5rem;
+        }
+      }
+
+      .news-bar {
+        .news-info {
+          font-size: 1rem;
+          padding: 0.5rem 0;
+          margin: 0.25rem 0.5rem;
         }
       }
     }
   }
 
-  .category {
-    color: red;
-  }
-
   .blog {
+    padding: 1rem 0.25rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    #warning {
+      width: calc(100% + 0.5rem);
+      left: -0.25rem;
+      content: url(/assets/images/warning-mobile.gif);
+      z-index: 0;
+    }
+
     .container {
       .blog-container {
         width: 80vw;
+        margin: .5rem 0;
         .title-excerpt {
           h2 {
-            font-size: 2rem;
+            font-size: 1.25rem;
+            padding: 1rem 0;
+            height: auto;
           }
           p {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
           }
         }
       }

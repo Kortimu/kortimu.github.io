@@ -4,34 +4,36 @@ title: News
 ---
 
 <section class="blog">
-  <h1>Latest News</h1>
+  <h1>All News</h1>
   <div class="container">
-    {% for post in site.posts %}
-      {% if post.category == "news" %}
-        <a class="blog-container" id="post" href="{{ post.url }}">
-          <div class="title-excerpt">
-            <h2>{{ post.title }}</h2>
-            <img src="
-            {% if post.cover %}
-              {{ post.cover }}
-            {% else %}
-              /images/kortimup.png
-            {% endif %}" alt="Your browser doesn't support the image. What kind of browser are you using?">
-          </div>
-          <div class="date-categories">
-            <div class="categories">
-              {% for tag in post.tags %}
-                <div class="category">
-                  {{ tag }}
-                </div>
-              {% endfor %}
-            </div>
-            <div class="date">
-              <p>{{post.date | date_to_string}}</p>
-            </div>
-          </div>
-        </a>
+    <h2>Newest</h2>
+    {% assign news_posts = site.posts | where:"category","news" | where:"archived","false" %}
+    {% for post in news_posts %}
+    {% if post == news_posts.last %}
+      <div class="news-post" id="last">
+        <p><strong>{{ post.date | date_to_string }}</strong></p>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </div>
+      {% else %}
+        <div class="news-post">
+          <p><strong>{{ post.date | date_to_string }}</strong></p>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </div>
       {% endif %}
     {% endfor %}
+
+    <input class="archived-check" type="checkbox" id="archived"/>
+    <label class="archived-button" for="archived">📜 Archived news...</label>
+
+    <div class="archived-news">
+      <h2>Archived</h2>
+      {% assign archived_posts = site.posts | where:"category","news" | where:"archived","true" %}
+      {% for post in archived_posts %}
+        <div class="news-post">
+          <p><strong>{{ post.date | date_to_string }}</strong></p>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </section>

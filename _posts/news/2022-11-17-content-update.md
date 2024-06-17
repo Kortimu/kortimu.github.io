@@ -1,9 +1,10 @@
 ---
 layout: post
 author: Kortimu
-title: So, Where Have I Been?
+title: ❓ So, Where Have I Been?
 tags: project update
-cover: /images/kortimu.png
+cover: /assets/images/posts/kortimu.png
+archived: true
 ---
 
 Oh wow, it's been a good while. Let me check... **OVER 7 MONTHS?!** Ok, yeah, this is not alright, it's time for me to do something about this.

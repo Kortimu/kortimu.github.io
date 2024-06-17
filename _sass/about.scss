@@ -1,0 +1,168 @@
+.container-about {
+    text-align: left;
+}
+
+ul, ol {
+    margin: 0.5rem;
+}
+
+li {
+    font-size: 1.25rem;
+    margin: 0.25rem;
+}
+
+.about-description {
+    display: flex;
+    flex: 1 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-rundown, #about-spin {
+    margin: 0 1rem;
+}
+
+#about-spin {
+    // max-width: 20vw;
+    height: 30rem;
+    flex-shrink: 1;
+    background-color: $darker;
+}
+
+.top-chunk {
+    text-align: center;
+
+    .top-list {
+        display: inline-block;
+
+        h3 {
+            margin-bottom: 0;
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+            text-align: left;
+        }
+
+        .top-grid {
+            display: inline-grid;
+            grid-template-columns: repeat(5, 5rem);
+            grid-template-rows: repeat(2, 5rem);
+            margin: 0 1rem;
+
+            // 0.5rem is 2*margin (more convenient this way)
+            #best {
+                width: calc(100% - 0.5rem);
+                grid-column: 1 / 3;
+                grid-row: 1 / 3;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            // see above
+            a {
+                width: calc(100% - 0.5rem);
+                margin: 0.25rem;
+                transition: transform 0.2s;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            a:hover {
+                transform: scale(1.08);
+            }
+        }
+    }
+}
+
+.thanks-user {
+    display: flex;
+    align-items: center;
+    
+    img {
+        width: 10rem;
+        height: 10rem;
+        margin: 0.5rem 0;
+        animation: weewee 2s infinite steps(4, start);
+    }
+    
+    a {
+        transition: transform 0.5s;        
+    }
+
+    a:hover {
+        transform: scale(1.05);
+    }
+}
+
+
+@keyframes weewee {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-description {
+        position: relative;
+        height: 30.5rem;
+        width: 16rem;
+        background-color: $darker;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #about-spin, .about-rundown {
+        position: absolute;
+        top: 0;
+    }
+
+    #about-spin {
+        background-color: #0000;
+        opacity: 0.2;
+    }
+
+    .about-rundown {
+        width: 16rem;
+        padding: 0.5rem;
+
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    li {
+        font-size: 1rem;
+    }
+
+    .top-chunk {
+        .top-list {
+            h3 {
+                text-align: center;
+                margin-left: 2rem;
+            }
+
+            .top-grid {
+                grid-template-columns: repeat(2, 30vw);
+                grid-template-rows: repeat(5, 30vw);
+
+                #best {
+                    width: calc(100% - 0.5rem);
+                }
+
+                img {
+                    width: calc(100% - 0.5rem);
+                }
+            }
+        }
+    }
+
+    .thanks-user {
+        flex-direction: column;
+    }
+}

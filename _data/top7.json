@@ -1,0 +1,46 @@
+{
+    "games": {
+        "best": ["/assets/images/top7/games/touhou7.jpg", "https://en.touhouwiki.net/wiki/Touhou_7"],
+        "rest": [
+            ["/assets/images/top7/games/touhou11.jpg", "https://store.steampowered.com/app/1100150/Touhou_Chireiden__Subterranean_Animism/"],
+            ["/assets/images/top7/games/touhou8.jpg", "https://en.touhouwiki.net/wiki/Touhou_8"],
+            ["/assets/images/top7/games/rhythmdoctor.jpg", "https://rhythmdr.com/"],
+            ["/assets/images/top7/games/antonblast.jpg", "https://antonblast.com"],
+            ["/assets/images/top7/games/btd6.jpg", "https://btd6.com/"],
+            ["/assets/images/top7/games/100_oj.jpg", "https://store.steampowered.com/app/282800/100_Orange_Juice/"]
+        ]
+    },
+    "youtubers": {
+        "best": ["/assets/images/top7/youtube/noodle.jpg", "https://www.youtube.com/@noodlefunny"],
+        "rest": [
+            ["/assets/images/top7/youtube/funke.jpg", "https://www.youtube.com/@FUNKe"],
+            ["/assets/images/top7/youtube/gensouchronicle.jpg", "https://www.youtube.com/@GensouChronicle"],
+            ["/assets/images/top7/youtube/minust.jpg", "https://www.youtube.com/@0minusT"],
+            ["/assets/images/top7/youtube/cgpgrey.jpg", "https://www.youtube.com/@CGPGrey"],
+            ["/assets/images/top7/youtube/csghostanimation.jpg", "https://www.youtube.com/@CSGhostAnimation"],
+            ["/assets/images/top7/youtube/catapu1t.jpg", "https://www.youtube.com/@Catapu1t"]
+        ]
+    },
+    "albums": {
+        "best": ["/assets/images/top7/albums/dipp.jpg", "https://open.spotify.com/album/7j8nEG9J42eBQNPkgnIect"],
+        "rest": [
+            ["/assets/images/top7/albums/irishpub.jpg", "https://en.touhouwiki.net/wiki/%E6%9D%B1%E6%96%B9Irish_Pub_~Caprice~"],
+            ["/assets/images/top7/albums/perfectred.jpg", "https://zahranworrell.bandcamp.com/album/perfect-red"],
+            ["/assets/images/top7/albums/gensokyo199x.jpg", "https://nocti.bandcamp.com/album/gensokyo-199x-a-90s-touhou-album"],
+            ["/assets/images/top7/albums/historybegins.jpg", "https://hatsunetsumikos.net/hsbg/"],
+            ["/assets/images/top7/albums/foxtailgrass.jpg", "https://f-g-s.net/fgst0016/special/"],
+            ["/assets/images/top7/albums/gensokyomidnightdrive.jpg", "https://violetdelta.bandcamp.com/album/gensokyo-midnight-drive-vol-1"]
+        ]
+    },
+    "fanworks": {
+        "best": ["/assets/images/top7/fanworks/gensokyoofhumans.jpg", "https://mangadex.org/title/df4711ea-39e6-488d-8d5e-d6accc339865/touhou-the-gensokyo-of-humans"],
+        "rest": [
+            ["/assets/images/top7/fanworks/magicianwholovedafake.jpg", "https://mangadex.org/title/af92c88e-c18f-4b11-aa59-e506c9c00176/touhou-the-magician-who-loved-a-fake"],
+            ["/assets/images/top7/fanworks/lostbranchoflegend.jpg", "https://store.steampowered.com/app/1140150/Touhou_Lost_Branch_of_Legend/"],
+            ["/assets/images/top7/fanworks/mystiasizakaya.jpg", "https://store.steampowered.com/app/1584090/Touhou_Mystias_Izakaya/"],
+            ["/assets/images/top7/fanworks/yoiyamidancers.jpg", "https://store.steampowered.com/app/1998530/Yoiyami_Dancers_Twilight_Danmaku_Dancers/"],
+            ["/assets/images/top7/fanworks/touhourhythmcarnival!scarlet.jpg", "https://en.touhouwiki.net/wiki/Touhou_Rhythm_Carnival!_Kurenai"],
+            ["/assets/images/top7/fanworks/touhousoccermoushuuden.jpg", "https://en.touhouwiki.net/wiki/Touhou_Soccer_Moushuuden"]
+        ]
+    }
+}

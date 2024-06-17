@@ -1,0 +1,26 @@
+---
+layout: default
+title: Projects
+---
+
+<section class="blog">
+  <h1>Projects</h1>
+  <div class="container">
+    {% for project in site.data.projects %}
+      <div class="project">
+        <div class="project-card" href="{{ project.url }}">
+          <div class="card-reveal">
+            <p>{{ project.description }}</p>
+            <div class="project-buttons">
+              {% for button in project.buttons %}
+                <a href="{{ button.url }}">{{ button.name }}</a>
+              {% endfor %}
+            </div>
+          </div>
+          <img src="{{ project.image }}" alt="">
+        </div>
+        <p><strong>{{ project.title }}</strong></p>
+      </div>
+    {% endfor %}
+  </div>
+</section>

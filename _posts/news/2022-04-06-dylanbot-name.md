@@ -1,9 +1,11 @@
 ---
 layout: post
 author: Kortimu
-title: It's Time For A Change.
+title: 🤖 It's Time For A Change.
+description: not ominous at all, nuh uh
 tags: project 
-cover: /images/discord-question.jpg
+cover: /assets/images/posts/DYNM-cover.jpg
+archived: true
 ---
 
 Hello! Just wanted to inform ya regarding a little thing I have been procrastinating on doing. You see, I have worked on a little Discord bot for a friend of mine, and I have decided to do a little cool thing with it.
@@ -18,7 +20,7 @@ This is a new chapter for this bot, as well as my general idea behind my project
 
 # Dymuse.
 
-### Why???
+## Why???
 I have plenty of reasons. In short:
 - **The bot was never intended to stay as "DylanBot".**
 - **I never liked the name "DylanBot", as it was meant to be temporary.**

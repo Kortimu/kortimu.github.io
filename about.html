@@ -5,16 +5,71 @@ permalink: /about
 ---
 
 <section class="blog">
-  <div>
-    <h1>About...</h1>
-    <h2>...me, the developer</h2>
-    <p>Hello! I am just a dude from Latvia making silly projects in my spare time. Sometimes they are good, sometimes they are dumb, but one thing stays the same: all of them are driven by passion.</p>
-    <h2>...the website itself</h2>
-    <p>This website has been made to inform you nice folk of the cool stuff I am working on, as well as just experimenting with interesting ideas that require a website.</p>
-    <h2>...my interests</h2>
-    <p>If it is not obvious, programming and graphic design are up there. Oh, and video games! Those are neat, too. Long story short - if it is digital, I have probably messed around with it. Is that a good thing? Don't know.</p>
-    <h2>Credits</h2>
-    <p><strong><a href="https://www.twitch.tv/beandhd">Bean Man</a></strong> for being a huge help for my projects. Not much of actual help, but the moral support is more than enough. ❤</p>
-    <p><strong><a href="https:gensokyoradio.net">Gensokyo Radio</a></strong> for helping me stay sane, after all these years. Seriously, go check 'em out, even if you are not interested in that side of the internet.</p>
+  <div class="container-about">
+    <h1>About Kortimu</h1>
+    <div class="about-description">
+      <img id="about-spin" src="/assets/images/kortimu-spin.gif">
+      <div class="about-rundown">
+        <p><strong>Name: </strong>Kortimu :]</p>
+        <p><strong>Location: </strong>🇱🇻 Latvia</p>
+        <p><strong>Age: </strong>legal</p>
+        <p><strong>Interests: </strong></p>
+          <ul>
+            <li>Touhou Project</li>
+            <li>programming</li>
+            <li>Touhou Project</li>
+            <li>vimdo gambz</li>
+            <li>(also Touhou Project)</li>
+            <li>(have you heard about the Touhou Project)</li>
+          </ul>
+        <p><strong>Felonies committed: </strong>at least 0</p>
+        <p><strong>Best Touhou: </strong>Sekibanki</p>
+        <p><strong>Notes: </strong></p>
+        <ul>
+          <li>has far too many opinions for his own good</li>
+          <li>pretty good at maths</li>
+          <li>drew all of this with a mouse (yes really)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="top-chunk">
+      <h2>Kortimu's Top 7</h2>
+      {% for items in site.data.top7 %}  
+        <div class="top-list">
+          <h3>{{items[0] | capitalize}}</h3>
+          <div class="top-grid">
+            <a id="best" href="{{items[1].best[1]}}" target="_blank">
+              <img src="{{items[1].best[0]}}">
+            </a>
+            {% for item in items[1].rest %}
+              <a href="{{item[1]}}" target="_blank">
+                <img src="{{item[0]}}">
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <h2>Special Thanks</h2>
+    <div class="thanks-user">
+      <a href="https://twitch.tv/beandhd" target="_blank">
+        <img src="/assets/images/thanks/bean.jpg">
+      </a>
+      <p><strong><a href="https://twitch.tv/beandhd" target="_blank">Bean Man</a></strong> - huge help with basically every project. Whenever my silly goopy brain cannot figure something out, he is right there to either give me a genius solution or bully me into figuring out one. PRODUCTIVITY!!! (also just a really good fella thanks homie you a real one)</p>
+    </div>
+    <div class="thanks-user">
+      <a href="https://gensokyoradio.net" target="_blank">
+        <img src="/assets/images/thanks/gr.jpg">
+      </a>
+      <p><strong><a href="https://gensokyoradio.net" target="_blank">Gensokyo Radio</a></strong> - keeping me sane while I commit felonies in my code since 2021. Also, the guys behind the thing are very cool. You can trust me that this isn't a sponsorship because they don't have the money for one. The only bias I have is that they have called out my name during live shows.</p>
+    </div>
+    <div class="thanks-user">
+      <a href="https://www.youtube.com/@WildwolfTheMortal" target="_blank">
+        <img src="/assets/images/thanks/wildwolf.jpg">
+      </a>
+      <p><strong><a href="https://www.youtube.com/@WildwolfTheMortal" target="_blank">Wildwolf</a></strong> - whenever I got a problem, pinged her for quick feedback. A palette cleanser from the antics of Bean Man, and with better response times. (Also, unlike him, she has actual social media to plug, so why not?)</p>
+    </div>
   </div>
 </section>
