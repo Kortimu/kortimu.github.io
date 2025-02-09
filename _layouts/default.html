@@ -4,6 +4,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- For embeds outside the website. Currently just for posts. -->
+    {% if page.cover %}
+      <meta name="description" content="{{ page.content | strip_html | truncate: 150 }}" />
+
+      <meta property="og:title" content="{{ page.title }} | {{ site.title }}" />
+      <meta property="og:site_name" content="https://kortimu.github.io" />
+      <meta property="og:image" content="{{ page.cover }}" />
+      <meta property="og:description" content="{{ page.content | strip_html | truncate: 150 }}" />
+      <meta name="theme-color" content="#33984b">
+
+      <!-- This makes the embedded image beeg. -->
+      <meta name="twitter:card" content="summary_large_image">
+    {% endif %}
+
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
