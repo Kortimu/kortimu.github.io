@@ -5,14 +5,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- For embeds outside the website. Currently just for posts. -->
-    {% if page.cover %}
+    <!-- For embeds outside the website. -->
+    {% if page.layout == "post" %}
       <meta name="description" content="{{ page.content | strip_html | truncate: 150 }}" />
 
       <meta property="og:title" content="{{ page.title }} | {{ site.title }}" />
       <meta property="og:site_name" content="https://kortimu.github.io" />
-      <meta property="og:image" content="{{ page.cover }}" />
+      <meta property="og:image" content="
+      {% if page.cover %}
+        {{ page.cover }}
+      {% else %}
+        /assets/images/wojack.png
+      {% endif %}" />
       <meta property="og:description" content="{{ page.content | strip_html | truncate: 150 }}" />
+      <meta name="theme-color" content="#b441cc">
+
+      <!-- This makes the embedded image beeg. -->
+      <meta name="twitter:card" content="summary_large_image">
+    {% else %}
+      <meta name="description" content="The home to all of my dumb stuff. Including this image." />
+
+      <meta property="og:title" content="{{ page.title }} | {{ site.title }}" />
+      <meta property="og:site_name" content="https://kortimu.github.io" />
+      <meta property="og:image" content="/assets/images/wojack.png" />
+      <meta property="og:description" content="The home to all of my dumb stuff. Including this image." />
       <meta name="theme-color" content="#33984b">
 
       <!-- This makes the embedded image beeg. -->
