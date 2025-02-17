@@ -11,10 +11,10 @@
 
       <meta property="og:title" content="{{ page.title }} | {{ site.title }}" />
       <meta property="og:site_name" content="https://kortimu.github.io" />
-      <meta property="og:image" content="
-      {% if page.cover %}
-        {{ page.cover }}
-      {% else %}
+      <!-- This feels wrong, but it *does* solve the weird spacing problem I get otherwise. So whatever. -->
+      <meta property="og:image" content="{% if page.cover %}{{
+        page.cover
+      }}{% else %}
         /assets/images/wojack.png
       {% endif %}" />
       <meta property="og:description" content="{{ page.content | strip_html | truncate: 150 }}" />
