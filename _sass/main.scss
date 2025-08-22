@@ -9,7 +9,13 @@ $dark: #0c2e44;
 $white: #d1f8ff;
 // $purple: #963dbf;
 
-// To any poor soul that dares try comprehend this: I am very sorry. Past me is an absolute baboon for making this shit this nested. Will fix later.
+// 
+// To any poor soul that dares try comprehend this:
+// I am very sorry.
+// 
+// Past me is an absolute baboon for making this shit this nested.
+// Will fix later. And by later I mean when Karlson releases.
+// 
 
 // TODO: Figure out the whole webkit and moz stuff. Should I bother? How to dev and do all that fancy shit? Problem for later. More fires need to be put out.
 
@@ -202,6 +208,7 @@ footer {
   max-width: 65rem;
   margin: 0 auto;
   color: $white;
+  font-size: 1.5rem;
   
   h1 {
     margin-top: 0;
@@ -212,7 +219,6 @@ footer {
     padding: .5rem;
     border: 2px solid $white;
     margin: 0 .5rem;
-    font-size: 1.5rem;
   }
   a:hover, a:focus {
     background: $white;
@@ -393,6 +399,18 @@ footer {
           margin: 0.25rem 0.5rem;
         }
       }
+    }
+  }
+
+  footer {
+    padding: 1.5rem;
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      margin: 0 .25rem;
     }
   }
 
